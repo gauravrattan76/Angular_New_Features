@@ -1,0 +1,62 @@
+change detection startegy-
+_______________________________________________________
+
+
+By default Angular uses the ChangeDetectionStrategy.Default change detection strategy.
+
+it will pick the changes only when the reference changes
+
+The default strategy doesn’t assume anything about the application, therefore every time something changes in our application, as a result of various user events, timers, XHR, promises, etc., a change detection will run on all components.
+
+
+_____________________________________________________________
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  foods = ['Bacon', 'Lettuce', 'Tomatoes'];
+
+  addFood(food) {
+    this.foods.push(food);
+  }
+}
+
+
+
+<input #newFood type="text" placeholder="Enter a new food">
+<button (click)="addFood(newFood.value)">Add food</button>
+
+<app-child [data]="foods"></app-child>
+_______________________________________________________________________
+
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html'
+})
+export class ChildComponent {
+  @Input() data: string[];
+}
+
+
+<ul>
+  <li *ngFor="let item of data">{{ item }}</li>
+</ul>
+
+
+_______________________________________________________________________
+
+
+With this, things don’t seem to work anymore. The new data still gets pushed into our foods array in the parent component, but Angular don’t see a new reference for the data input and therefore doesn’t run change detection on the component.
+
+To make it work again, the trick is to pass a completely new reference to our data input. This can be done with something like this instead of Array.push in our parent component’s addFood method:
+
+addFood(food) {
+  this.foods = [...this.foods, food];
+}
+With this variation, we are not mutating the foods array anymore, but returning a completely new one. Et voilà, things are working again in our child component! Angular detected a new reference to data, so it ran it’s change detection on the child component.
