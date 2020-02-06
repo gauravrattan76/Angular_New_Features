@@ -1,0 +1,62 @@
+Performance of the angular app-
+________________________________________________________________-
+
+1.AOT Compilation
+When running a production build, Angular using JIT (just in time) compilation, which essentially means, Angular compiles your views in the browser at runtime. This has two downsides. First, the compilation process must run before your application can be used, and this can increase the time it takes for your site to load. Secondly, we have to ship the Angular compiler with your application, and it is not a small module!
+
+By taking advantage of AOT (ahead of time) compilation, we move this step to build time so we do it once when building our application, and only ship the compiled templates. We can now remove the Angular compiler from our bundle (reducing our bundle size by ~1mb) and allows us to skip the compilation step making our pages load much quicker!
+
+
+_____________________
+
+2.Lazy Loading Modules
+
+dynamic laoding of imports
+___________________________
+
+3.4. OnPush Change Detection
+When an event occurs (eg. dom event, timeout, interval, http request etc…) Angular runs change detection so see if there are any values that have changed that require the view to be updated. This process is very fast, especially compared to AngularJS. This is largely down to the unidirectional data flow now used in Angular. However, even with the great performance improvements, as your application grows this can become slower.
+
+By default, Angular will check every component that may have been affected to see if there have been changes, but we can be smarter, and tell Angular to only run change detection when an Input changes or when we manually trigger it. This will allow us to skip change detection in this component in most cases giving us a speed boost.
+
+
+OnPush change detection is easily used when using a reactive state management solution like NGRX - we will cover more about this later.
+
+
+__________________________________________________
+
+We can do this by specifying the change detection strategy in the component decorator:
+
+
+________________________________________________________________-
+
+5. Preserve Whitespaces
+
+This is another dead easy optimization that can reduce your bundle size by a small amount, but every little bit helps! In Angular 5, they introduced a new feature called preserveWhitespaces which allows you to tell the compiler to remove any whitespaces between elements. By default the compiler includes these as it can have a small effect on spacing.
+
+In your applications tsconfig.json you can add the following to tell the compiler to remove whitespaces in all templates by default:
+
+___________________________________________________________________
+
+
+13. Track By Function
+
+
+Manipulating the DOM is an expensive task, and this can be very evident when it comes to rendering long lists of items, usually achieved by using the *ngFor directive.
+
+By default, ngFor performs a simple equality check to see if items have changed. This is fine when it is a list of simple primitives such as numbers or strings, but can become a little bit more complicated when it comes to lists of objects.
+
+As mentioned, it performs a simple equality check, which simply checks if the two objects are the same by reference, not by the properties within them.
+
+It is common when using any Redux style architecture to enforce immutability, in other words any time the list of objects changes, each object within it will be a new object, and have a different reference even though the contents of it may be the same. As a result when ngFor performs it’s equality check, it will think the entire list contents have changed causing a complete re-render. Not exactly ideal for making your application performant.
+
+The ngFor directive does however give us a simple solution in the form of a trackBy function. This is a function that we can provide to determine if the object is the same or not. For example, each object may have a unique id, which we can use to see if the item has changed. We can use this feature like so:
+
+<ul>
+    <li *ngFor="let document of documents; trackBy: trackByFn">{{ document.name }}</li>
+</ul>
+And that’s it! The ngFor directive can now perform efficient updates.
+
+
+___________________________________________________________________
+
