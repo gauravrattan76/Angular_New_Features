@@ -1,0 +1,1 @@
+devDependencies are modules which are only required during development, while dependencies are modules which are also required at runtime. 
