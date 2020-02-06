@@ -1,0 +1,3 @@
+Redux is a pattern/library from the React world that has inspired popular Angular tools like NgRx and NGXS. The purpose of redux is to make application data more predictable by creating a one-way data flow.
+
+Your application data is a single immutable object that can only be changed by dispatching actions
