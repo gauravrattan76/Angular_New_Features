@@ -1,0 +1,28 @@
+Angular 8 New Features-
+____________________________________________
+
+Differential loading is a process by which the browser chooses between modern or legacy JavaScript based on its own capabilities. We now take advantage of this by default by performing a modern build (es2015) and a legacy build (es5) of your application. When users load your application, they’ll automatically get the bundle they need.
+If you use ng update, we update your tsconfig.jsonfor you to take advantage of this. Our CLI looks at the target JS level in your tsconfig.json to determine whether or not to take advantage of Differential Loading.
+
+When target is set to es2015, we generate and label two bundles.
+At runtime, the browser uses attributes on the script tag to load the right bundle.
+<script type="module" src="…"> // Modern JS
+<script nomodule src="…"> // Legacy JS
+On angular.io we saved over 40kB of initial bundle size for modern browsers. From the community we’ve heard that applications generally save 7–20% of their bundle size, depending on the amount of modern JavaScript features they take advantage of.
+
+
+Differential Loading Detail-
+
+
+
+In Angular 8, the team decided to find some new ways to fix this and reduce the bundle size and then the concept of differential loading comes into action.
+What is happening till angular 7 when we build our apps with “ng build” command, our all the typescript files are converted to js and then the final application bundle is created for all browsers either modern or older one considering the application should run properly of older browser. which results in larger bundle size because all the modern JS/TS code need to be converted in JS which can be easily supported by older browsers.
+Now Whats happening in angular 8 when we build an app with “ng build” command.
+
+output of ng build command
+when we build the project it created two different bundles one is for older browser(marked with red) and another is for browsers that supports modern javascript(marked with blue), and have a look at the file size of both the bundles.
+During deployment both the bundles are deployed and when a client opens your web app then based on browser compatibility the JS bundle is loaded.
+But the question is how the application knows weather the browser is older or modern?
+Have a look at at index.html where scripts are imported.
+
+from the above image you can easily understand how it is working . when nomodule is true then it will load js for older browser and ignore the next script otherwise it will load the js for modern browsers. if you are still confused have a look at this nice video tutorial on Demos with Angular Channel on youtube.
