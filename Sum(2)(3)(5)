@@ -1,0 +1,17 @@
+var sum = function(a)
+{
+    var add = function(b)
+    {
+        var sum2 = function(c)
+        {
+            return a + b + c;
+        }
+        return sum2;
+    }
+    return add;
+}
+
+sum(2)(3)(4);
+
+
+Using closures
