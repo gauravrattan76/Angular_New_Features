@@ -1,0 +1,3 @@
+href is html anchor tag attribute to navigate to another page. Here a new page will be loaded.
+
+RouterLink is used to achieve the same functionality but angular 2 or above are single page applications, where the page should not reload. RouterLink navigates to New Url and the component is rendered in place of routeroutlet without reloading the page.
