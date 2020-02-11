@@ -1,0 +1,36 @@
+enter image description here
+
+For Require--
+
+require     module.exports
+
+
+for import
+
+we have export
+
+
+Apart from that,
+
+You can't selectively load only the pieces you need with require but with imports, you can selectively load only the pieces you need. That can save memory.
+
+Loading is synchronous(step by step) for require on the other hand import can be asynchronous(without waiting for previous import) so it can perform a little better than require.
+
+The major difference between require and import, is that require will automatically scan node_modules to find modules, but import, which comes from ES6, won't.
+
+
+'import' should be used with 'export' key words to share variables/arrays/objects between js files:
+
+export default myObject;
+
+//....in another file
+
+import myObject from './otherFile.js';
+
+'require' should be used with 'module.exports'
+
+module.exports = myObject;
+
+//....in another file
+
+var myObject = require('./otherFile.js');
