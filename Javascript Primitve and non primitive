@@ -1,0 +1,32 @@
+JavaScript provides different data types to hold different types of values. There are two types of data types in JavaScript:
+Primitive values
+Non-primitive values (object references)
+Data types that are known as primitive values in JavaScript are numbers, strings, booleans, null, undefined. Objects such as functions and arrays are referred to as non-primitive values.
+The fundamental difference between primitives and non-primitives is that primitives are immutable and non-primitives are mutable.
+Primitives are known as being immutable data types because there is no way to change a primitive value once it gets created.
+var string = 'This is a string.';
+string[1] = 'H'
+console.log(string) // 'This is a string.'
+Primitives are compared by value. Two values are strictly equal if they have the same value.
+var number1 = 5;
+var number2 = 5;
+number1 === number 2; // true
+var string1 = 'This is a string.';
+var string2 = 'This is a string.';
+string1 === string2; // true
+Non-primitive values are mutable data types. The value of an object can be changed after it gets created.
+var arr = [ 'one', 'two', 'three', 'four', 'five' ];
+arr[1] = 'TWO';
+console.log(arr) // [ 'one', 'TWO', 'three', 'four', 'five' ];
+Objects are not compared by value. This means that even if two objects have the same properties and values, they are not strictly equal. Same goes for arrays. Even if they have the same elements that are in the same order, they are not strictly equal.
+var obj1 = { 'cat': 'playful' };
+var obj2 = { 'cat': 'playful' };
+obj1 === obj2;  // false
+var arr1 = [ 1, 2, 3, 4, 5 ];
+var arr2 = [ 1, 2, 3, 4, 5 ];
+arr1 === arr2;  // false
+Non primitive values can also be referred to as reference types because they are being compared by reference instead of value. Two objects are only strictly equal if they refer to the same underlying object.
+var obj3 = { 'car' : 'purple' }
+var obj4 = obj3;
+obj3 === obj4;  // true
+You can check if two objects are the same by doing a deep equals comparison to go through each of the properties to determine if two objects have the exact same properties.
