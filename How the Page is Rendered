@@ -1,0 +1,21 @@
+Why did the JavaScript did not work in this case
+JavaScript code is present before the textbox control. By the time the JavaScript code is executed, the textbox is still not loaded into browser DOM (Document Object Model). This is the reason JavaScript can't find the textbox and throws a NULL reference error.
+
+In Part 6, we discussed that, in general it is a good practice to store JavaScript in an external .js file. So, if the JavaScript is present in an external file and if you are referencing it on a page using <script> element, where should such <script> element be placed.
+
+To answer this question, first let's understand what happens when a browser starts loading a web page.
+1. The browser starts parsing the HTML
+
+2. When the parser encounters a <script> tag that references an external JavaScript file. The parser stops parsing the HTML and the browser makes a request to download the script file. Until the download is complete, the parser is blocked from parsing the rest of the HTML on the page.
+
+3. When the download is complete, that's when the parser will resume to parse the rest of the HTML. 
+
+This means the page loading is stopped until all the scripts are loaded which affects user experience.
+
+ 
+
+
+In general, the suggested good practice is to place the <script> tag just before the closing <body> tag, so it doesn't block the HTML parser. However, modern browsers support async and defer attributes on scripts. These attributes tell the browser it's safe to continue parsing while the scripts are being downloaded. But even with these attributes, from a performance standpoint it is still better to place <script> tag just before closing <body> tag. 
+
+According to HTTP/1.1 specification browsers download no more than two components in parallel. So, if the page has several images to download and if you place <script> tags at the top of the page, the script files start to download first which blocks the images download which adds to the total page load time.
+
