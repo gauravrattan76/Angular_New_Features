@@ -13,6 +13,12 @@ var name = "Donald Trump";
 name.replace("Donald", "President");
 console.log(name)//Donald Trump
 
+Immutability disallowed any altering of the original string by the string method. Instead, the method produces a new string if the method operation is assigned to a variable like so:
+
+var name = "Donald Trump";
+var newName = name.replace("Donald", "President");
+console.log(newName);//President Trump
+
 the original string remains intact!
 
 JavaScript provides different data types to hold different types of values. There are two types of data types in JavaScript:
