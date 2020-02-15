@@ -1,3 +1,6 @@
+Summary
+This post isn’t an exhaustive list of when you’d use a for loop over the forEach() method on arrays and vice versa, but I covered the more common situations I’ve run into and when I choose one over the other. One thing I didn’t cover was performance. If you look at performance metrics comparing the for loop to forEach(), the for loop is faster. However, a lot of the time this added performance won’t make a difference in your application, and using for over forEach() is premature optimization. Instead, optimize for code readability to ensure easier long term maintenance. When performance becomes an issue with forEach(), then reach for the for loop and see if it makes a difference.
+
 The for loop
 The for loop is probably one of the first looping mechanisms you learned about when diving into JavaScript.
 
