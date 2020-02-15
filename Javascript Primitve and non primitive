@@ -1,5 +1,18 @@
 Important-
 
+
+so we say var a = 10;
+
+a = 20;
+
+here we are pointing to a differbet memory location.
+var str = "gaurav";
+str.replace("gaurav",test);
+
+still str will be gaurav as its primitive and immutable.
+
+
+
 var fruits = ["mango","banana", "orange"];
 fruits.pop(); 
 console.log(fruits) //["mango", "banana"]
