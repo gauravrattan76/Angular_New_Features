@@ -1,3 +1,20 @@
+Important-
+
+var fruits = ["mango","banana", "orange"];
+fruits.pop(); 
+console.log(fruits) //["mango", "banana"]
+
+
+The array.pop() method deleted "orange" from the original fruits array.
+But with strings for example,
+
+
+var name = "Donald Trump";
+name.replace("Donald", "President");
+console.log(name)//Donald Trump
+
+the original string remains intact!
+
 JavaScript provides different data types to hold different types of values. There are two types of data types in JavaScript:
 Primitive values
 Non-primitive values (object references)
