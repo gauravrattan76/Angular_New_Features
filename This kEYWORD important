@@ -1,0 +1,83 @@
+Incase of object-
+_________________________
+
+This will point to the object itself-
+
+var emp = {
+    fname:"gaurav",
+    print(){
+        console.log(this);
+    }
+}
+
+emp.print();
+
+Result-
+
+{fname: "gaurav", print: ƒ}
+fname: "gaurav"
+print: ƒ print()
+__proto__: Object
+
+__________________________________
+
+
+
+Incase of function we get
+
+var emp = {
+    fname:"gaurav"
+}
+
+var employee = function(){
+    var play = function(){
+        console.log(this);
+        return 1;
+    }
+    return play();
+}
+
+
+employee();
+
+
+we get the window object here.
+
+
+________________________________
+
+when we use inside function using construtor function-
+
+
+
+
+var employee = function(name){
+ this.name = name;
+console.log(this);
+
+}
+
+var add = new employee("gaurav");
+
+
+we get only the object with the this.name;
+
+________________________________
+
+
+When Nesting-
+
+var employee = {
+    fname :"gaurav",
+    tags:["a","b","c","d"],
+    showTags(){
+        var self = this;
+       this.tags.forEach(function(tag){//heere we hve function inside functiin
+           console.log(self.fname + tag);
+       }) 
+    }
+}
+
+employee.showTags();
+
+
