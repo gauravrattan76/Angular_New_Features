@@ -1,0 +1,67 @@
+I was looking at the differences between Freeze and Seal in ECMAScript 5 and created a script to clarify the differences. Frozen creates an immutable object including data and structure. Seal prevents changes to the named interfaces - no adds, deletes - but you can mutate the object and redefine the meaning of its interface.
+
+Object.freeze() creates a frozen object, which means it takes an existing object and essentially calls Object.seal() on it, but it also marks all “data accessor” properties as writable:false, so that their values cannot be changed. - Kyle Simpson, You Don't Know JS - This & Object Prototypes
+
+
+Freeze: makes the object immutable, meaning no change to defined property allowed, unless they are objects.
+Seal: prevent addition of properties, however defined properties still can be changed.
+
+I was looking at the differences between Freeze and Seal in ECMAScript 5 and created a script to clarify the differences. Frozen creates an immutable object including data and structure. Seal prevents changes to the named interfaces - no adds, deletes - but you can mutate the object and redefine the meaning of its interface.
+
+
+
+    var myObject = function() 
+    { 
+        this.test = "testing"; 
+    }
+
+    //***************************SETUP****************************
+
+    var frozenObj = new myObject();
+    var sealedObj = new myObject();
+
+    var allFrozen = Object.freeze(frozenObj);
+    var allSealed = Object.seal(sealedObj);
+    console.log("frozenObj of myObject type now frozen - Property test= " + frozenObj.test);
+    console.log("sealedObj of myObject type now frozen - Property test= " + sealedObj.test);
+
+    // //***************************FROZEN****************************
+
+    frozenObj.addedProperty = "added Property"; //ignores add
+    alert("Frozen addedProperty= " + frozenObj.addedProperty);
+    delete frozenObj.test; //ignores delete
+    alert("Frozen so deleted property still exists= " + frozenObj.test);
+    frozenObj.test = "Howdy"; //ignores update
+    alert("Frozen ignores update to value= " + frozenObj.test);
+    frozenObj.test = function() { return "function"; } //ignores
+    alert("Frozen so ignores redefinition of value= " + frozenObj.test);
+
+    alert("Is frozen " + Object.isFrozen(frozenObj));
+    alert("Is sealed " + Object.isSealed(frozenObj));
+    alert("Is extensible " + Object.isExtensible(frozenObj));
+
+    alert("Cannot unfreeze");
+    alert("result of freeze same as the original object: " + (frozenObj === allFrozen).toString());
+
+    alert("Date.now = " + Date.now());
+
+    // //***************************SEALED****************************
+
+    // sealedObj.addedProperty = "added Property"; //ignores add
+    // alert("Sealed addedProperty= " + sealedObj.addedProperty);
+    // sealedObj.test = "Howdy"; //allows update
+    // alert("Sealed allows update to value unlike frozen= " + sealedObj.test);
+    // sealedObj.test = function() { return "function"; } //allows
+    // alert("Sealed allows redefinition of value unlike frozen= " + sealedObj.test);
+    // delete sealedObj.test; //ignores delete
+    // alert("Sealed so deleted property still exists= " + sealedObj.test);
+    // alert("Is frozen " + Object.isFrozen(sealedObj));
+    // alert("Is sealed " + Object.isSealed(sealedObj));
+    // alert("Is extensible " + Object.isExtensible(sealedObj));
+
+    // alert("Cannot unseal");
+    // alert("result of seal same as the original object: " + (sealedObj === allSealed).toString());
+
+    // alert("Date.now = " + Date.now());
+
+
