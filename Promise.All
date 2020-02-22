@@ -1,0 +1,16 @@
+var p1 = new Promise((res,rej) =>{
+    res("first array result");
+   
+})
+
+var p2 = Promise.resolve("hello p2");
+
+var p3 = Promise.resolve("third promise resolved");
+
+
+Promise.all([p1,p2,p3]).then((d) =>{
+    console.log(d);
+})
+
+
+we get an array of promises
