@@ -1,0 +1,49 @@
+var MakeRequest = function (location) {
+    return new Promise((resolve, reject) => {
+        if (location === "Google") {
+            resolve("We are in Google.com");
+        }
+        else {
+            reject("Invalid request");
+        }
+    })
+}
+
+var getResponse = function (response) {
+    return new Promise((resolve, reject) => {
+        resolve("The response is " + response);
+    })
+}
+
+
+// MakeRequest("Google").then((res) =>{
+//     console.log("response from make requesr" + res);
+//     return getResponse(res);
+// }).then((res)=>{
+//    console.log(res);
+// })
+
+async function learn(){
+    try{
+   var p1 = await MakeRequest("rest");
+   console.log(p1);
+   console.log("First promise is resolved");
+   var p2 = await getResponse(p1);
+   console.log(p2);
+   console.log("Final promise is resolved");
+   return p1;
+}
+catch(e)
+{
+    console.log(e);
+}
+}
+
+learn().then((res)=>{
+console.log(res);
+})
+
+
+______________________
+
+Only issue is we need to use try catch block to handle the exceptions in async await.
