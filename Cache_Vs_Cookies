@@ -1,0 +1,44 @@
+The ‘Cache Memory’, which is also called as the memory of the ‘CPU’ is a high speed ‘SRAM’ (Static Random Access Memory) which can be accessed by the microprocessor of the computer system with great ease which has also access to the RAM (Random Access Memory) respectively.Where ‘cache’ is the term which is defined as the software or the hardware component of the computer system which successfully stores the data in order to so that, the requests which are made in the near future can be accessed and or served much, much more faster where this all is possible only because that particular instance of the data was earlier stored in that particular previous cache due to the various computational reasons and or the copy of that was stored somewhere else due to the system’s working and functioning.
+
+II. What are ‘ Cookies ‘ ?
+
+The ‘Cookies’ are defined in terms of computing as those files or to be specific the small files in terms of its size which are generally stored on a user’s system.Generally, cookies can be accessed either with the help of the client computer or with the help of the ‘web server’ respectively, where cookies are designed in such a way that they holds and remembers the smallest of smallest amount of data which is very specific and which is related to the client of that website.
+
+In simple terms, “A ‘Cookie’ is a small piece of data which is stored on the user’s computer while that data has been sent on from the website with the help of the user’s web browser while the user is browsing the internet with the help their browsers respectively.
+
+III. What is the difference between ‘Cookies’ and ‘Cache Memory’ ?
+
+The most basic thing which one need’s to keep in mind while going through the terms ‘Cookies’ as well as the ‘Cache Memory’ is that they are two different forms of temporary storage which is used in order to improve the user experience and hence, the shorter page loading time which is taken by the various web pages, with the help of storing the data on the client’s machine and or server for a temporary amount of duration.Now, one may think that, both of them are made to store data, than what is the most fundamental difference between those two,so they both are made to serve the different purposes as a whole on the server and various websites as well.
+
+The difference between the ‘Cookies’ and the ‘Cache Memory’ is as follows:
+
+The ‘Cache Memory’ is used to make the loading of the web page faster whereas ‘Cookies’ are generally used to store information related to the user for various tracking purposes.
+The ‘Cache Memory’ stores the files such as ‘video’, ‘audio’, ‘various other flash files’ etc. whereas the ‘Cookies’ stores the data related to the ‘User Preferences’ respectively.
+The ‘Cache Memory’ is permanently stored in the client’s system until and unless it is deleted/removed manually by the user itself, on the other hand, the ‘Cookies’ generally have a limited amount of time until they are stored and gets expired after that time.
+The ‘Cache Memory’ can retain the information from the main source website and thus that particular data can be used furthermore for one’s own benefit or further more some activity to carry out, whereas, the ‘Cookies’ stores the various digital files that are available on that particular web page so that web page loads much faster when compared to its previous instance.
+Now, here comes the example.Let’s say, for example, someone is browsing the website of ‘Amazon’ and searching for a particular product to buy, but not purchased it yet.Now, that same person is browsing any other website, so that person will be displayed ads relevant to what he/she was browsing on that Amazon’s website, that is, all the products which he/she was browsing on the Amazon’ website, will be displayed as ads when he/she will go and visit any other website. So, how this all is possible.This all is possible because, the memory is stored in the form of ‘Cache Memory’ and whenever someone surfs the internet so the various relevant ads are displayed accordingly to that particular user.
+
+Now, what role does ‘Cookies’ plays in this whole scenario. It simply shortens the loading time of any particular webpage by storing the information of its digital media.Say, that person visited the website of ‘Amazon’ on the internet.Now, what will happen is, with the help of ‘Cookies’ it will store all the information related to that webpage’s browsing history, like what web-page that particular person browsed, what type of images were displayed there, what type of product which one browsed there and all the images related to that product and all other web sources as well, and it will save it in a particular place as well on the server’s side.Now, what will happen is that, whenever, that person will re-visit that website or that particular product page so what will happen is that all the various media which is related to that particular page, say for example, all the images,videos,and all other web-content will load now much faster as compared to the previous time of loading taken to load that particular website.Hence, small part of the images and other web resources are already stored on the computer system respectively, so thus ultimately it helps in boosting the loading time.
+So,this wall all about, the difference between the ‘Cache Memory’ and the ‘Cookies’ and how do they work and also what are their examples respectively.
+
+Thanks for reading ✍️
+
+4.6k views · View 5 Upvoters
+Related QuestionsMore Answers Below
+What is cache and cookies?
+What is a cache and cookies in simple language?
+What are session, cache, and cookies?
+What is the difference between cookie, cache and session?
+Is it worth regularly clearing my browser's cache, cookies, and history?
+Soham Soumya Sarkar
+Soham Soumya Sarkar, works at Akamai Technologies
+Answered Oct 5, 2016 · Author has 98 answers and 346.7k answer views
+Cookie and Cache are used for completely different purposes.
+
+Cookie - An HTTP cookie (also called web cookie, Internet cookie, browser cookie or simply cookie) is a small piece of data sent from a website and stored in the user's web browser while the user is browsing. HTTP is a stateless protocol i.e. a client and server remembers each other only during one request-response pair, in the subsequent request a server would again not recognize the client. To make HTTP stateful, various session management (method to make HTTP stateful) techniques are used and Cookies are one amongst them which is the most widely used session management method.
+
+Importance of Cookie - Would like to cite a simple example to highlight the importance of cookie. For eg - A user is in an E-commerce website trying to make sure purchases. Without session management the application would not be able to identify anyone’s cart and also, would not be able to associate payments correspoding to a cart i.e. to a user’s purchases.
+
+Cache - HTTP caching is a mechanism used to store temporary data in a memory and using the data from that location for future requests. When a user requests for some information from a website, the server responds to the request and also, at the same time stores the object in the cache. The next time user requests for the same object, the object is served straight from the cache rather than from the server provided the object is not stale. There are various ways using which HTTP checks if a cache object is reusable or not and one can read about conditional HTTP requests to learn more about it.
+
+Importance of Cache - Cache is king and Caching is the essence of HTTP. It helps internet function. There are multiple advantages of it like it improves performance, reduces load on origin infrastructure and provides offload, reduces bandwidth usage, helps preserve computation resources usage etc.
