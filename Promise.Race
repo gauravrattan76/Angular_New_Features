@@ -1,0 +1,22 @@
+ var p1 = Promise.reject("p1 is rejected");
+
+var p2 = Promise.resolve("p2 is resolved");
+
+var p3 = new Promise(function(resolve,reject)
+{
+    setTimeout(resolve,1000,"third resolve");
+})
+
+
+Promise.race([p2,p1,p3]).then((d) => {
+    console.log(d);
+}).catch((e) => console.log(e));
+
+
+
+
+it will give the result of the first resolved or reject.
+
+so if order is p1,p2,p3 we get the reject
+
+if we have p2,p1,p3 we get the resolve
