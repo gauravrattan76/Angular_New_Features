@@ -60,3 +60,25 @@ __________________
 
 
 problem is call back hell
+
+____________________
+
+Same code with Promises-
+
+var promise = new Promise(function(resolve,reject){
+    resolve(2);
+})
+
+promise.then(first).then(second).then((res)=>{
+    console.log(res);
+})
+
+function first(value)
+{
+    return value + 2;
+}
+
+function second(value)
+{
+    return value + 4;
+}
