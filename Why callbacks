@@ -1,0 +1,62 @@
+A function that takes another function as parameter is called as callback
+
+
+callbacks are used to make sure that functions are run in a sequential manner.
+
+function first(){
+setTimeOut(()=>
+console.log("1")),500};
+
+function second(){
+console.log("2");
+}
+
+
+we will get 2 first and 2 later;
+
+
+________________________
+
+var first = function(name){
+    return name;
+}
+
+var second = function(callback)
+{
+    return callback("gaurav");
+}
+
+console.log(second(first));
+
+
+______________________
+
+Implementing in a sequential manner-
+
+first(1,function(firstval,err){// on the basis of reult of first we generate the second
+    if(!err)
+    {
+        second(firstval,function(secval,err){
+            if(!err){
+                console.log("second vale" + secval);
+            }
+        })
+       
+    }
+})
+
+
+function first(value,callback)
+{
+    return callback(value+1,false);
+}
+
+function second(value,callback)
+{
+    return callback(value+1,false);
+}
+
+__________________
+
+
+problem is call back hell
