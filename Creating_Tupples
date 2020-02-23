@@ -1,0 +1,4 @@
+var myarr: [number,string] = [1,"garv"];
+
+
+here I can speicfy how my array should look like
