@@ -1,0 +1,21 @@
+class Employee{
+    private _age;
+    name = "Gaurav";
+
+    get Age(){
+        return this._age;
+    }
+    
+    set Age(val){
+       this._age = val;
+    }
+}
+
+
+var c = new Employee();
+var d = new Employee();
+c.Age = 45;
+c.name = "Rattan";
+
+console.log(c);
+console.log(d);
