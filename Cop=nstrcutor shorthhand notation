@@ -1,0 +1,37 @@
+class Employee{
+    // private _fname;
+    // private _lname;
+    constructor(private fname,private lname)
+    {
+        // this._fname = fname;
+        // this._lname = lname;
+    }
+
+    getFullName(){
+        return this.fname + " __" + this.lname;
+    }
+}
+
+var emp = new Employee("gaurav","Rattan");
+console.log(emp.getFullName());//gives the name
+
+
+________________
+
+class Employee{
+    // private _fname;
+    // private _lname;
+    constructor(public fname,private lname)//getting public properties here
+    {
+        // this._fname = fname;
+        // this._lname = lname;
+    }
+
+    getFullName(){
+        return this.fname + " __" + this.lname;
+    }
+}
+
+var emp = new Employee("gaurav","Rattan");
+console.log(emp.fname);
+console.log(emp.getFullName());//gives the name
