@@ -1,0 +1,31 @@
+we have Employee.ts file-
+_______________________________
+
+interface IEmployee{
+    fname:string;
+    lname:string;
+    printName():string
+}
+
+export class Employee implements IEmployee{
+    constructor(public fname,public lname)
+    {
+
+    }
+   
+    printName():string{
+        return this.fname + this.lname;
+    }
+
+}
+
+
+_____________________
+
+code.ts file
+
+
+import {Employee} from './employee';
+
+var pemp= new Employee("gaurav","rattan");
+console.log(pemp.printName());
