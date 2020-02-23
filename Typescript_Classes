@@ -1,0 +1,16 @@
+class Employee{
+    firstName;
+    lastName;
+    constructor(fname,lname)
+    {
+        this.firstName = fname;
+        this.lastName = lname;
+    }
+
+    getFullName(){
+        return this.firstName + this.lastName;
+    }
+}
+
+var n = new Employee("gaurav","rattan");
+console.log(n);
