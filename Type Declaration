@@ -1,0 +1,5 @@
+var a : string;  //we sdeclare that what  sort of data it can hold.
+
+
+a = 20;
+
