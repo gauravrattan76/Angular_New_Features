@@ -1,0 +1,13 @@
+class Employee{
+    readonly name ="gaurav";//we can only define where we are declaring
+    constructor(name)
+    {
+    this.name = name
+    }
+    
+    or constructor(readolny name)//short hand syntax
+    
+}
+
+var e =new Employee();
+e.name = "rattan";
