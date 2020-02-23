@@ -1,0 +1,7 @@
+var a :number | string;   //union typing here which makes sure its of type string or number
+
+a = 20;
+a = "gaurav";
+
+
+var a :any;// we can assign a y values and dont do type checking  
