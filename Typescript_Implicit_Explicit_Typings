@@ -1,0 +1,21 @@
+var a = 20;
+a = 40;
+a ="gaurav";
+
+
+Here we are not implicitly defining typing
+so if we declare and define it will take the typing of that type
+if we only declare it will be linke of any
+
+var b;
+b= 34;
+b = "rattan";
+
+
+var greet = function(){
+    return "hello";
+}
+
+bar geeting;
+greeting = greet();
+greeting = 30;//works fine
