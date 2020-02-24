@@ -1,0 +1,17 @@
+// amtArray = [2000, 500, 100];  // the denomination you want to find.
+// var resultArray = [];
+// var total = 2300;
+
+//  for (let i = 0; i < this.amtArray.length; i++) {
+//             this.resultArray.push(Math.floor(total / this.amtArray[i]));
+//             // Get the new total
+//             total = total % this.amtArray[i];
+//         }
+//         var twothousands_notes = this.resultArray[0];
+//         var fivehundred_notes = this.resultArray[1];
+//         var hundred_notes = this.resultArray[2];
+
+
+// console.log(twothousands_notes);
+// console.log(fivehundred_notes);
+// console.log(hundred_notes);
